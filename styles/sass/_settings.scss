@@ -1,0 +1,72 @@
+main#settings {
+
+    form {
+        height: 100%;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        // outline: 2px solid red;
+
+        h1 {
+            margin-bottom: 1em;
+            color: rgb(71, 71, 71);
+        }
+    }
+
+    form > div {
+        display: flex;
+        gap: 0.2em;
+        flex-direction: column;
+        margin-bottom: 1em;
+        padding: 0 1em;
+
+        label {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: rgb(71, 71, 71);
+        }
+
+        input {
+            font-size: 1.2rem;
+            padding: 0.6em 0.3em;
+            border-radius: 5px;
+
+            &:focus {
+                outline: 2px solid var(--system-secondary-color);
+            }
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 0.6em 0.3em;
+            background-color: var(--system-secondary-color);
+            text-transform: uppercase;
+            color: var(--system-white-color);
+            border-radius: 5px;
+
+            &:hover {
+                background-color: var(--system-secondary-color-fade);
+            }
+        }
+
+        .feedback {
+            text-align: center;
+            color: var(--system-white-color);
+            padding: 0.2em 0;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+
+
+            &.success {
+                opacity: 1;
+                background-color: var(--system-secondary-color);
+            }
+
+            &.failure {
+                opacity: 1;
+                background-color: var(--alert-color);
+            }
+
+        }
+    }
+}

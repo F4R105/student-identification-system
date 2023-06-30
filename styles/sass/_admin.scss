@@ -1,0 +1,70 @@
+main#admin {
+    
+    #guards {
+        // outline: 2px solid red;
+        height: 100%;
+        max-width: 750px;
+        margin: 0 auto;
+
+        #pagetitle {
+            color: rgb(68, 68, 68);
+            margin-bottom: 1em;
+            border-bottom: 2px solid gray;
+        }
+
+        p#guardslist {
+            font-size: 1.2rem;
+            color: rgb(68,68,68);
+            font-weight: bold;
+            padding: 0.5em 0;
+            box-shadow: 0 8px 5px -5px rgba(black,.2);
+        }
+
+        #guards_list {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow-y: scroll;
+            padding: 0.5em;
+            padding-bottom: 5em;
+            // outline: 2px solid red;
+        }
+
+        .empty {
+            background-color: rgba(white,.2);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .guard {
+            background-color: var(--system-white-color);
+            color: var(--system-main-color);
+            padding: 0.8em 0.5em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 5px 5px rgba(black,.05);
+
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+
+            .guard_name {
+                font-size: 1.1rem;
+            }
+
+            .guard_id {
+                font-size: 0.8rem;
+                color: gray;
+            }
+
+            &:hover, &:focus {
+                outline: 2px solid var(--system-secondary-color);
+            }
+        }
+    }
+}

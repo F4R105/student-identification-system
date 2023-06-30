@@ -1,0 +1,2 @@
+- phone number validation when adding guard
+- delete guard profile picture when he/she is deleted
