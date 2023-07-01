@@ -51,7 +51,7 @@ const fetchStudentInfo = async (admissionNumber) => {
 
     try {
         scannerProgress.innerText = `Loading`
-        const res = await fetch('../process/studentInfo_api.php', options)
+        const res = await fetch('../../process/studentInfo_api.php', options)
         if(res.status !== 200){
             scannerInput.value = ''
             const error = await res.json()
