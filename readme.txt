@@ -1,2 +1,3 @@
 - phone number validation when adding guard
-- delete guard profile picture when he/she is deleted
+- delete guard/student profile picture when he/she is deleted
+- attendance: pagination, date picker, attendance frequency, attendee information

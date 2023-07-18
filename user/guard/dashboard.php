@@ -31,13 +31,13 @@
                         <p class="reminder"><b>IMPORTANT:</b> You logged in using temporary password, go to settings to update your credentials.</p>
                     <?php } ?>
                     <?php if($checkedIn == 0){ ?>
-                        <p class="reminder">Don't forget to check-in</p>
+                        <p class="reminder">Check-in to start scanning</p>
                     <?php } else { ?>
-                        <p class="reminder">You checked in today at <?php echo $log['checkin']; ?></p>
+                        <p class="reminder">You checked in today, <?php echo $log['date']; ?> at <?php echo $log['checkin']; ?></p>
                         <p class="reminder">Don't forget to check-out</p>
                     <?php } ?>
                 <div>
-                    <button id="scanBtn">SCAN</button>
+                    <button id="scanBtn" <?php if($checkedIn == 0){ echo "disabled style='background-color: gray;'"; } ?>>SCAN</button>
                 </div>
             </div>
         </div>

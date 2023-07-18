@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2023 at 09:45 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Jul 18, 2023 at 11:51 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,6 +39,29 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`admin_id`, `username`, `password`) VALUES
 (1, 'admin', '$2y$10$wKAwBD5ZqcBgJGkm.tWjKOLZjyZhx7tSgO7xLGLUXH8h2F1UI5Dk6');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `student_id` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `time` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`student_id`, `date`, `time`) VALUES
+('20051013032', '18/07/2023', '22:26'),
+('20051013032', '18/07/2023', '22:27'),
+('20051013030', '18/07/2023', '23:10'),
+('20051013030', '18/07/2023', '23:27'),
+('20051013030', '18/07/2023', '23:36');
 
 -- --------------------------------------------------------
 
@@ -84,7 +107,9 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`log_id`, `date`, `checkin`, `checkout`, `guard_id`) VALUES
-(12, '23/04/2023', '22:19', '22:20', '2011');
+(12, '23/04/2023', '22:19', '22:20', '2011'),
+(13, '18/07/2023', '19:10', 'on duty', '2011'),
+(14, '19/07/2023', '00:42', '00:47', '2011');
 
 -- --------------------------------------------------------
 
@@ -121,6 +146,12 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD KEY `student_id` (`student_id`);
+
+--
 -- Indexes for table `guards`
 --
 ALTER TABLE `guards`
@@ -154,11 +185,17 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`admission_number`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `logs`

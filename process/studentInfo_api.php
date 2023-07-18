@@ -22,7 +22,34 @@
         // Error message
         $error_message = array(
             'error' => 'Bad Request',
-            'message' => 'Student not registered or invalid barcode20051013032'
+            'message' => 'Student not registered or invalid barcode'
+        );
+
+        // Set the response content type to JSON
+        header('Content-Type: application/json');
+
+        // Send the error response as JSON
+        echo json_encode($error_message);
+
+        // Terminate the script
+        exit();
+
+    }
+
+    $date = date('d/m/Y');
+    $time = date('H:i');
+    $query = "INSERT INTO attendance(`student_id`,`date`,`time`) VALUES('$admission_number','$date','$time')";
+    $set_attendance = mysqli_query($db, $query);
+
+    if(!$set_attendance){
+        
+        // Set the HTTP response code
+        http_response_code(400); // For example, using 400 Bad Request
+
+        // Error message
+        $error_message = array(
+            'error' => 'Bad Request',
+            'message' => 'Attendance not recorded'
         );
 
         // Set the response content type to JSON

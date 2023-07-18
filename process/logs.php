@@ -23,7 +23,7 @@
         header("location: ../user/guard/dashboard.php");
     }else{
 
-        $query = "UPDATE logs SET checkout = '$time' WHERE date='$date' AND guard_id='$guard_id'";
+        $query = "UPDATE logs SET checkout = '$time' WHERE `date`='$date' AND guard_id='$guard_id'";
         $setLog = mysqli_query($db,$query);
 
         if(!$setLog){ 

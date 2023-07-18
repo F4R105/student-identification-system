@@ -83,6 +83,8 @@ scanBtn.addEventListener('click',()=>{
     scannerInput.value = ''
 
     scannerProgress.innerText = `Waiting for scan!..`
+
+    setTimeout(()=>{fetchStudentInfo(20051013030)},3000)
 })
 
 scannerOverlay.addEventListener('click',(e)=>{

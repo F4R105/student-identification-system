@@ -28,6 +28,7 @@
             <span></span>
             <ul>
                 <li><a href="./dashboard.php">Dashboard</a></li>
+                <li><a href="./attendance.php">Attendance</a></li>
                 <li><a id="navAddGuardBtn">Add guard</a></li>
                 <li><a href="../../process/logout.php?admin">Logout</a></li>
                 <li><a href="./settings.php">Settings</a></li>
