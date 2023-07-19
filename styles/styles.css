@@ -934,6 +934,10 @@ main#settings form > div label {
   font-weight: bold;
   color: rgb(71, 71, 71);
 }
+main#settings form > div p.instruction {
+  color: var(--alert-color);
+  font-size: 0.8rem;
+}
 main#settings form > div input {
   font-size: 1.2rem;
   padding: 0.6em 0.3em;

@@ -24,6 +24,8 @@
                 </div>
                 <div>
                     <label for="new_password">New password</label>
+                    <p class="instruction">Password should contain numbers, small and capital letters</p>
+                    <p class="instruction">Password should have 6 or more characters</p>
                     <input type="password" name="new_password" />
                 </div>
                 <div>
@@ -43,6 +45,7 @@
                                 }else{
                                     echo "failure";
                                 }
+                                
                             }
                         ?>"
                     >
