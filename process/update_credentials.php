@@ -34,7 +34,7 @@
             !preg_match('/[A-Z]/', $confirm_password) ||
             !preg_match('/[0-9]/', $confirm_password)
         ){ 
-            $msg = base64_encode('use strong password');
+            $msg = base64_encode('Password should contain numbers, small and capital letters');
             header("location: ../user/admin/settings.php?msg=$msg&f"); 
             die();
         };
@@ -104,7 +104,7 @@
             !preg_match('/[A-Z]/', $confirm_password) ||
             !preg_match('/[0-9]/', $confirm_password)
         ){ 
-            $msg = base64_encode('use strong password');
+            $msg = base64_encode('Password should contain numbers, small and capital letters');
             header("location: ../user/admin/settings.php?msg=$msg&f"); 
             die();
         };
