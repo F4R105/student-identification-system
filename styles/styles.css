@@ -436,6 +436,23 @@ body #scannerOverlay #scannerInfo {
   margin: 1em;
   padding: 1em;
 }
+body #addGuardFormOverlay #scannerInfo svg,
+body #verifyGuardDeleteOverlay #scannerInfo svg,
+body #verifyPasswordResetOverlay #scannerInfo svg,
+body #overlayFeedback #scannerInfo svg,
+body #scannerOverlay #scannerInfo svg {
+  fill: #363636;
+}
+body #addGuardFormOverlay #scannerInfo #resultHeader,
+body #verifyGuardDeleteOverlay #scannerInfo #resultHeader,
+body #verifyPasswordResetOverlay #scannerInfo #resultHeader,
+body #overlayFeedback #scannerInfo #resultHeader,
+body #scannerOverlay #scannerInfo #resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
 body #addGuardFormOverlay #scannerInfo #scannerInput,
 body #verifyGuardDeleteOverlay #scannerInfo #scannerInput,
 body #verifyPasswordResetOverlay #scannerInfo #scannerInput,

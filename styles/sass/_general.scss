@@ -361,6 +361,16 @@ body {
             margin: 1em;
             padding: 1em;
 
+            // * {outline: 2px solid red;}
+            svg {fill: #363636;}
+
+            #resultHeader {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                margin-bottom: 1em;
+            }
+
             #scannerInput {
                 opacity: 0;
                 position: absolute;
