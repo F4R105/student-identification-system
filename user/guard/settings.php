@@ -11,12 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIS | Account Settings</title>
     <link rel="stylesheet" href="../../styles/styles.min.css">
+    <script src="../../scripts/form_validation.js" defer></script>
 </head>
 <body>
     <?php require('./navbar.php'); ?>
     <main id="settings">
         <div class="container">
-            <form action="../../process/update_credentials.php" method="POST">
+            <form action="../../process/update_credentials.php" method="POST" id="settingsForm" >
                 <h1>Account Settings</h1>
                 <div>
                     <label for="current_password">Current password</label>
@@ -45,7 +46,7 @@
                                 }else{
                                     echo "failure";
                                 }
-                                
+
                             }
                         ?>"
                     >

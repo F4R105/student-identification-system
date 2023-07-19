@@ -14,13 +14,14 @@
     <script src="../../scripts/addguard.js" defer></script>
     <script src="../../scripts/image_preview.js" defer></script>
     <script src="../../scripts/password_generator.js" defer></script>
+    <script src="../../scripts/form_validation.js" defer></script>
 </head>
 <body>
     <?php require('./navbar.php'); ?>
     <?php require('./addGuardFormOverlay.php'); ?>
     <main id="settings">
         <div class="container">
-            <form action="../../process/update_credentials.php" method="POST">
+            <form action="../../process/update_credentials.php" method="POST" id="settingsForm">
                 <h1>Account Settings</h1>
                 <div>
                     <label for="current_password">Current password</label>
@@ -41,7 +42,7 @@
                     <input type="password" name="confirm_password" />
                 </div>
                 <div>
-                    <button type="submit">Update credentials</button>
+                    <button id="submitBtn">Update credentials</button>
                 </div>
                 <div>
                     <div class="feedback 
