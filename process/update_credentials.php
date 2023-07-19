@@ -20,6 +20,26 @@
             die();
         };
 
+        // VALIDATE PASSWORD
+        // Password length
+        if(strlen($confirm_password) < 6){ 
+            $msg = base64_encode('password should contain 6 or more characters');
+            header("location: ../user/admin/settings.php?msg=$msg&f"); 
+            die();
+        };
+
+        // Password strength
+        if(
+            !preg_match('/[a-z]/', $confirm_password) ||
+            !preg_match('/[A-Z]/', $confirm_password) ||
+            !preg_match('/[0-9]/', $confirm_password)
+        ){ 
+            $msg = base64_encode('use strong password');
+            header("location: ../user/admin/settings.php?msg=$msg&f"); 
+            die();
+        };
+
+
         // VERIFY CURRENT PASSWORD
         $query = "SELECT `username`,`password` FROM admins WHERE admin_id = '$admin_id'";
         $data = mysqli_query($db, $query);
@@ -67,6 +87,25 @@
         if(empty($current_password) || empty($new_password) || empty($confirm_password)){ 
             $msg = base64_encode('all fields are required');
             header("location: ../user/guard/settings.php?msg=$msg&f"); 
+            die();
+        };
+
+        // VALIDATE PASSWORD
+        // Password length
+        if(strlen($confirm_password) < 6){ 
+            $msg = base64_encode('password should contain 6 or more characters');
+            header("location: ../user/admin/settings.php?msg=$msg&f"); 
+            die();
+        };
+
+        // Password strength
+        if(
+            !preg_match('/[a-z]/', $confirm_password) ||
+            !preg_match('/[A-Z]/', $confirm_password) ||
+            !preg_match('/[0-9]/', $confirm_password)
+        ){ 
+            $msg = base64_encode('use strong password');
+            header("location: ../user/admin/settings.php?msg=$msg&f"); 
             die();
         };
 
