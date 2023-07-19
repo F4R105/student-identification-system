@@ -22,7 +22,7 @@
         // Error message
         $error_message = array(
             'error' => 'Bad Request',
-            'message' => 'Student not registered or invalid barcode'
+            'message' => 'Denied!!, Student not registered or invalid barcode'
         );
 
         // Set the response content type to JSON
